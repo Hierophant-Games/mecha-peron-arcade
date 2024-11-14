@@ -15,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 mouse_default_cursor_shape = 3
 theme = ExtResource("1_0ujwh")
 color = Color(0, 0, 0, 0.4)
@@ -43,5 +44,3 @@ label_settings = SubResource("LabelSettings_7g3hj")
 stream = ExtResource("3_ijuut")
 max_polyphony = 3
 bus = &"Sfx"
-
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
