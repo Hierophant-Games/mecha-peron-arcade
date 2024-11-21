@@ -24,10 +24,7 @@ func _process(delta: float) -> void:
 	_time_accum += delta
 	
 	if Input.is_action_just_released("ui_accept"):
-		if _done:
-			hide()
-		else:
-			_skip = true
+		skip_or_hide()
 	
 	if _done:
 		if _time_accum > CURSOR_TIME:
@@ -54,3 +51,14 @@ func type_text() -> void:
 	label.text = full_text.substr(0, _text_accum)
 	if _text_accum == full_text_count:
 		_done = true
+
+func skip_or_hide() -> void:
+	if _done:
+		hide()
+	else:
+		_skip = true
+
+# this is needed for the mobile version, for some reason we can't fully understand
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
+		skip_or_hide()
