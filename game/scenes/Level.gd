@@ -16,7 +16,6 @@ var intro_state := PRE_INTRO
 @onready var peron := $ParallaxBackground/MainLayer/Peron as Peron
 @onready var camera := $ParallaxBackground/MainLayer/Peron/Camera2D as Camera2D
 @onready var hud := $GUILayer/HUD as HUD
-@onready var init_screen := $GUILayer/InitScreen as InitScreen
 @onready var game_over := $GUILayer/GameOver as GameOver
 @onready var scene_fader := $GUILayer/SceneFader as SceneFader
 
@@ -24,10 +23,10 @@ var _is_first_building := true
 var _is_first_cannon := true
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	GlobalAudio.stop_music()
 	ScoreTracker.reset()
 	hud.hide()
-	init_screen.hide()
 	game_over.hide()
 
 func _process(_delta: float):
@@ -55,16 +54,12 @@ func update_intro():
 				Engine.time_scale = 1
 				peron.blocked = true
 				peron.idle()
-				init_screen.show()
 		INTRO:
-			# The InitScreen auto-hides when done, that's our cue to continue
-			if !init_screen.visible:
-				intro_state = POST_INTRO
-				peron.blocked = false
-				peron.walk()
-				init_screen.hide()
-				hud.show()
-				GlobalAudio.play_ingame_music()
+			peron.blocked = false
+			peron.walk()
+			hud.show()
+			GlobalAudio.play_ingame_music()
+			intro_state = POST_INTRO
 
 func input():
 	if peron.dying:

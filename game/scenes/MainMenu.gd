@@ -10,6 +10,8 @@ extends Control
 @onready var play_button := $MarginContainer/ButtonList/PlayButton as Button
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	TranslationServer.set_locale("es")
 	GlobalAudio.play_menu_music()
 
 func _on_play_button_pressed():
@@ -21,9 +23,3 @@ func _on_play_button_pressed():
 
 func _on_options_button_pressed():
 	$SceneFader.transition_to(options_scene, false)
-
-func _on_credits_button_pressed():
-	$SceneFader.transition_to(credits_scene, false)
-
-func _on_help_button_pressed():
-	$SceneFader.transition_to(help_scene, false)

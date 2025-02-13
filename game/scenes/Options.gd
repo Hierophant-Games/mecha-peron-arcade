@@ -12,6 +12,7 @@ extends Control
 var should_play_samples := false
 
 func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	GlobalAudio.play_menu_music()
 	music_slider.value = GameSettings.music_volume
 	sound_slider.value = GameSettings.sound_volume

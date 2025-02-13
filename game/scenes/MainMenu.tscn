@@ -70,24 +70,7 @@ script = ExtResource("4_mwlkc")
 
 [node name="PlayButton" type="Button" parent="MarginContainer/ButtonList"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../HelpButton")
 text = "START_GAME_BUTTON_TEXT"
-alignment = 2
-
-[node name="OptionsButton" type="Button" parent="MarginContainer/ButtonList"]
-layout_mode = 2
-text = "OPTIONS_BUTTON_TEXT"
-alignment = 2
-
-[node name="CreditsButton" type="Button" parent="MarginContainer/ButtonList"]
-layout_mode = 2
-text = "CREDITS_BUTTON_TEXT"
-alignment = 2
-
-[node name="HelpButton" type="Button" parent="MarginContainer/ButtonList"]
-layout_mode = 2
-focus_neighbor_bottom = NodePath("../PlayButton")
-text = "HELP_BUTTON_TEXT"
 alignment = 2
 
 [node name="SceneFader" parent="." instance=ExtResource("4_7jkku")]
@@ -95,6 +78,3 @@ visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/ButtonList/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MarginContainer/ButtonList/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="MarginContainer/ButtonList/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="MarginContainer/ButtonList/HelpButton" to="." method="_on_help_button_pressed"]

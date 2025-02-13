@@ -10,6 +10,12 @@ const FILENAME := "user://settings.cfg"
 func _ready():
 	load_config()
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("exit_game"):
+		get_tree().quit()
+	elif Input.is_action_just_pressed("open_settings"):
+		get_tree().change_scene_to_file("res://game/scenes/Options.tscn")
+
 func set_music_volume(value: float):
 	music_volume = value
 	var music_bus_index = AudioServer.get_bus_index("Music")

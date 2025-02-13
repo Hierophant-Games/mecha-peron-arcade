@@ -9,21 +9,7 @@ You command the path of destruction of Mecha-Perón. Have fun.","Luego de perder
 Lamentablemente, la IA implantada en el Mecha se descontroló y empezó a destruir la capital japonesa.
 
 Controlás el camino de destrucción de Mecha-Perón. Divertite."
-INITIALIZING_TEXT,"> MECHA-PERON INITIALIZING
-> -------------------------------
-> Preparing weaponry...........
-> Laser eye aiming system ready.........USE MOUSE TO CONTROL
-> Rocket punch ready......PRESS X TO DEPLOY
-> Justicialist arm ready............PRESS Z TO ACTIVATE
->
-> Click to continue","> INICIALIZANDO A MECHA-PERON
-> -------------------------------
-> Preparando el armamento...........
-> Láser ocular listo....CONTROLE CON EL MOUSE
-> Puño cohete listo......PRESIONE X PARA DESPLEGAR
-> Brazo justicialista listo.....PRESIONE Z PARA ACCIONAR
-> 
-> Clic para continuar"
+
 BACK_BUTTON_TEXT,Back,Atrás
 DISCLAIMER_TEXT,"Disclaimer:
 
@@ -45,8 +31,8 @@ START_GAME_BUTTON_TEXT,Viva Mecha-Perón!,Viva Mecha-Perón!
 OPTIONS_BUTTON_TEXT,Configure,Configurar
 CREDITS_BUTTON_TEXT,Credits,Créditos
 HELP_BUTTON_TEXT,What the f*** is this all about?,¿Qué carajo es todo esto?
-ROCKET_PUNCH_TUTORIAL_TEXT,Press X for Rocket Punch,Presiona X para el Puño Cohete
-HAMMER_FIST_TUTORIAL_TEXT,Press Z for Justicialist Arm,Presiona Z para el Brazo Justicialista
+ROCKET_PUNCH_TUTORIAL_TEXT,Use the Rocket Punch,Usa el Puño Cohete
+HAMMER_FIST_TUTORIAL_TEXT,Use the Justicialist Arm!,Usa el Brazo Justicialista!
 WARNING_TEXT,WARNING! ->,CUIDADO! ->
 OVERHEAT_TEXT,OVERHEAT,SOBRECARGA
 CREDITS_TEXT,"GODOT PORT BY
