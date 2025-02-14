@@ -31,8 +31,8 @@ START_GAME_BUTTON_TEXT,Viva Mecha-Perón!,Viva Mecha-Perón!
 OPTIONS_BUTTON_TEXT,Configure,Configurar
 CREDITS_BUTTON_TEXT,Credits,Créditos
 HELP_BUTTON_TEXT,What the f*** is this all about?,¿Qué carajo es todo esto?
-ROCKET_PUNCH_TUTORIAL_TEXT,Use the Rocket Punch,Usa el Puño Cohete
-HAMMER_FIST_TUTORIAL_TEXT,Use the Justicialist Arm!,Usa el Brazo Justicialista!
+ROCKET_PUNCH_TUTORIAL_TEXT,Use the Rocket Punch,Usá el Puño Cohete
+HAMMER_FIST_TUTORIAL_TEXT,Use the Justicialist Arm!,Usá el Brazo Justicialista!
 WARNING_TEXT,WARNING! ->,CUIDADO! ->
 OVERHEAT_TEXT,OVERHEAT,SOBRECARGA
 CREDITS_TEXT,"GODOT PORT BY
