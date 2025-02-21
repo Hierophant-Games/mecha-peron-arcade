@@ -8,7 +8,7 @@ const FloatingTextScene = preload("res://game/tutorial/FloatingText.tscn")
 enum { PRE_INTRO, INTRO, POST_INTRO }
 var intro_state := PRE_INTRO
 
-@export_file("*.tscn") var main_menu_scene: String
+@export_file("*.tscn") var enter_your_name_scene: String
 
 @onready var main_layer := $ParallaxBackground/MainLayer
 @onready var front_layer := $ParallaxBackground/FrontLayer as Parallax2D
@@ -142,7 +142,4 @@ func get_front_layer_screen_right() -> float:
 	return (camera.global_position.x + get_viewport_rect().size.x) * front_layer.scroll_scale.x
 
 func _on_game_over_main_menu_pressed() -> void:
-	scene_fader.transition_to(main_menu_scene)
-
-func _on_game_over_try_again_pressed() -> void:
-	get_tree().reload_current_scene()
+	scene_fader.transition_to(enter_your_name_scene)
