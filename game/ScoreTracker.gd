@@ -11,7 +11,7 @@ const ENEMY_NAMES := ["Plane", "Building", "Soldier", "Cannon"]
 const SCORE_VALUES := [10, 20, 1, 20]
 const DISTANCE_SCALE_FACTOR := 300.0
 
-const SCORES_FILENAME := "user://scores.cfg"
+const SCORES_FILENAME := "user://scores.dat"
 
 var _score := 0
 var _killed_count := [0, 0, 0, 0]
