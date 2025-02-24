@@ -40,3 +40,6 @@ func _on_spanish_pressed() -> void:
 
 func _on_english_pressed() -> void:
 	TranslationServer.set_locale("en")
+
+func _on_cursor_rotation_pressed(value: int) -> void:
+	GameSettings.cursor_rotation = value
