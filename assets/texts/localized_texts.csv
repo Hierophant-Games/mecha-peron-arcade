@@ -27,6 +27,7 @@ MUSIC_VOLUME_TEXT,Music volume,Volumen de la música
 SOUND_VOLUME_TEXT,Sound volume,Volumen del sonido
 VOICE_VOLUME_TEXT,Voices volume,Volumen de voces
 LANGUAGE_TEXT,Language,Idioma
+CURSOR_ROTATION_TEXT,Cursor Rotation,Rotación del cursor
 START_GAME_BUTTON_TEXT,Viva Mecha-Perón!,Viva Mecha-Perón!
 OPTIONS_BUTTON_TEXT,Configure,Configurar
 CREDITS_BUTTON_TEXT,Credits,Créditos
@@ -131,6 +132,6 @@ WE <3 JAPAN, no estamos burlándonos de los últimos sucesos acontecidos.*
 Este juego fue hecho para el concurso CODEAR ""Perón""de la Asociación de Desarolladores de Videojuegos Argentinos (ADVA). Gracias por jugarlo!
 
 Fue nuestro primer proyecto como equipo y estamos muy contentos con el resultado. Viva Perón!"
-ENTER_YOUR_NAME_TEXT,"Enter your initials","Poné tus iniciales"
-CONTINUE_TEXT,"Continue","Continuar"
-HALL_OF_FAME_TEXT,"Mecha-Perón Hall of Fame","Unidad Básica\nMecha-Peronista"
+ENTER_YOUR_NAME_TEXT,Enter your initials,Poné tus iniciales
+CONTINUE_TEXT,Continue,Continuar
+HALL_OF_FAME_TEXT,Mecha-Perón Hall of Fame,"Unidad Básica\nMecha-Peronista"

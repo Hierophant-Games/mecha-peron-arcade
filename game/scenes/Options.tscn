@@ -51,24 +51,55 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_constants/separation = 8
 
-[node name="Language" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Language"]
+[node name="Language" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Language"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "LANGUAGE_TEXT"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Language"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Language"]
 layout_mode = 2
 
-[node name="Spanish" type="Button" parent="MarginContainer/VBoxContainer/Language/HBoxContainer"]
+[node name="Spanish" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Language/HBoxContainer"]
 layout_mode = 2
 icon = ExtResource("4_k28v4")
 
-[node name="English" type="Button" parent="MarginContainer/VBoxContainer/Language/HBoxContainer"]
+[node name="English" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Language/HBoxContainer"]
 layout_mode = 2
 icon = ExtResource("5_8s8wn")
+
+[node name="CursorRotation" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/CursorRotation"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "CURSOR_ROTATION_TEXT"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/CursorRotation"]
+layout_mode = 2
+
+[node name="0" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/CursorRotation/HBoxContainer"]
+layout_mode = 2
+text = "0º"
+
+[node name="90" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/CursorRotation/HBoxContainer"]
+layout_mode = 2
+text = "90º"
+
+[node name="180" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/CursorRotation/HBoxContainer"]
+layout_mode = 2
+text = "180º"
+
+[node name="270" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/CursorRotation/HBoxContainer"]
+layout_mode = 2
+text = "270º"
 
 [node name="MusicSettings" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -146,8 +177,12 @@ bus = &"Sfx"
 stream = ExtResource("7_hs4md")
 bus = &"Voice"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Language/HBoxContainer/Spanish" to="." method="_on_spanish_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Language/HBoxContainer/English" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Language/HBoxContainer/Spanish" to="." method="_on_spanish_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Language/HBoxContainer/English" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CursorRotation/HBoxContainer/0" to="." method="_on_cursor_rotation_pressed" binds= [0]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CursorRotation/HBoxContainer/90" to="." method="_on_cursor_rotation_pressed" binds= [90]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CursorRotation/HBoxContainer/180" to="." method="_on_cursor_rotation_pressed" binds= [180]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CursorRotation/HBoxContainer/270" to="." method="_on_cursor_rotation_pressed" binds= [270]]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/MusicSettings/Slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/SoundSettings/Slider" to="." method="_on_sound_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/VoiceSettings/Slider" to="." method="_on_voice_slider_value_changed"]
