@@ -18,6 +18,8 @@ func _process(_delta: float) -> void:
 		get_tree().quit()
 	elif Input.is_action_just_pressed("open_settings"):
 		get_tree().change_scene_to_file("res://game/scenes/Options.tscn")
+	elif Input.is_action_just_pressed("on_cursor_rotation_pressed"):
+		cursor_rotation = (cursor_rotation + 1) % 4
 
 func set_music_volume(value: float):
 	music_volume = value
@@ -53,7 +55,7 @@ func set_cursor_rotation(value: int):
 	match value:
 		0:
 			pass
-		90:
+		1:
 			replace_events("cursor_up", cursor_right_events)
 			replace_events("cursor_right", cursor_down_events)
 			replace_events("cursor_down", cursor_left_events)
@@ -62,7 +64,7 @@ func set_cursor_rotation(value: int):
 			replace_events("ui_right", ui_down_events)
 			replace_events("ui_down", ui_left_events)
 			replace_events("ui_left", ui_up_events)
-		180:
+		2:
 			replace_events("cursor_up", cursor_down_events)
 			replace_events("cursor_right", cursor_left_events)
 			replace_events("cursor_down", cursor_up_events)
@@ -71,7 +73,7 @@ func set_cursor_rotation(value: int):
 			replace_events("ui_right", ui_left_events)
 			replace_events("ui_down", ui_up_events)
 			replace_events("ui_left", ui_right_events)
-		270:
+		3:
 			replace_events("cursor_up", cursor_left_events)
 			replace_events("cursor_right", cursor_up_events)
 			replace_events("cursor_down", cursor_right_events)
