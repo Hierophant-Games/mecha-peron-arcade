@@ -22,6 +22,7 @@ VFX="*res://game/vfx/VFX.gd"
 ScoreTracker="*res://game/ScoreTracker.gd"
 GlobalAudio="*res://game/GlobalAudio.tscn"
 Cursor="*res://game/Cursor.gd"
+Demo="*res://game/Demo.gd"
 
 [display]
 
