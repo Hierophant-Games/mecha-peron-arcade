@@ -20,6 +20,7 @@ OF_COURSE_TEXT,Of course it is!,Claro que sí!
 PATH_OF_DESTRUCTION_TEXT,Your path of destruction ends at:,Tu camino de destrucción termina a los:
 SCORE_DISTANCE_TEXT,{distance_score}km,{distance_score}km
 SCORE_DESTRUCTION_TEXT,Total Destruction: {destruction_score},Destrucción Total: {destruction_score}
+HISCORE_TEXT,HI-SCORE: {hiscore},HI-SCORE: {hiscore}
 TRY_AGAIN_BUTTON_TEXT,Try again,Intentar de nuevo
 GO_TO_MAIN_MENU_BUTTON_TEXT,Go to main menu,Menú principal
 HUD_DESTRUCTION_TEXT,Destruction: {interpolated_score},Destrucción: {interpolated_score}

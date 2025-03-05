@@ -8,6 +8,7 @@ extends MarginContainer
 @onready var laser_bar := $Meters/Bars/LaserBar/MarginContainer/ProgressBar as ProgressBar
 @onready var destruction_label := $Score/DestructionLabel as Label
 @onready var distance_label := $Score/DistanceLabel as Label
+@onready var hiscore_label := $Hiscore/HiscoreLabel as Label
 
 func _process(delta: float) -> void:
 	health_bar.value = player.health
@@ -15,3 +16,4 @@ func _process(delta: float) -> void:
 	fist.value = player.get_fist_percentage()
 	distance_label.text = ScoreTracker.get_distance_text()
 	destruction_label.text = ScoreTracker.get_interpolated_score_text(delta)
+	hiscore_label.text = ScoreTracker.get_hiscore_text()

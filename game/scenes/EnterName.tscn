@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dl2l1ti6hp54b"]
 
 [ext_resource type="Theme" uid="uid://ct3h1jpn888ka" path="res://assets/default_theme.tres" id="1_lgnbn"]
-[ext_resource type="Script" path="res://game/scenes/EnterName.gd" id="2_vyqio"]
+[ext_resource type="Script" uid="uid://c83oya02rip4h" path="res://game/scenes/EnterName.gd" id="2_vyqio"]
 [ext_resource type="PackedScene" uid="uid://d0u268u2tja7g" path="res://game/scenes/SceneFader.tscn" id="3_qvy8a"]
 
 [node name="EnterName" type="Control"]

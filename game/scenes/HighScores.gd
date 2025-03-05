@@ -21,7 +21,6 @@ func _ready() -> void:
 	
 	var scores := ScoreTracker.get_scores()
 	#scores.append_array(placeholders)
-	scores.sort_custom(func (a, b): return a.score > b.score)
 	
 	var in_top_ten := false
 	var current_score := ScoreTracker.get_current_score()

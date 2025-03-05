@@ -18,6 +18,7 @@ var _killed_count := [0, 0, 0, 0]
 var _distance_traveled := 0.0
 var _interpolated_score := 0.0
 
+var _hiscore: ScoreEntry = null
 var _current_initials := ""
 
 func reset():
@@ -25,6 +26,7 @@ func reset():
 	_score = 0
 	_distance_traveled = 0.0
 	_current_initials = ""
+	_hiscore = get_hiscore()
 	if OS.has_feature('debug'):
 		print("Score was reset!")
 
@@ -46,6 +48,12 @@ func get_score_text() -> String:
 func get_interpolated_score_text(delta: float) -> String:
 	_interpolated_score = minf(_score, _interpolated_score + delta * 10)
 	return tr("HUD_DESTRUCTION_TEXT").format({"interpolated_score": int(_interpolated_score)})
+
+func get_hiscore_text() -> String:
+	if _hiscore:
+		return tr("HISCORE_TEXT").format({"hiscore": _hiscore.get_score_text() })
+	else:
+		return ""
 
 class ScoreEntry:
 	var initials: String
@@ -76,7 +84,15 @@ func get_scores() -> Array[ScoreEntry]:
 		scores.push_back(ScoreEntry.new(
 			file.get_buffer(3).get_string_from_utf8(),
 			file.get_32()))
+	scores.sort_custom(func (a, b): return a.score > b.score)
 	return scores
 
 func get_current_score() -> ScoreEntry:
 	return ScoreEntry.new(_current_initials, int(_distance_traveled * 100))
+
+func get_hiscore() -> ScoreEntry:
+	var scores := get_scores()
+	if scores.size() > 0:
+		return get_scores()[0]
+	else:
+		return null
