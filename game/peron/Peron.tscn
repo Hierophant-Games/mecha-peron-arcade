@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://ck7uiqcyaf6j2"]
 
-[ext_resource type="Script" path="res://game/peron/Peron.gd" id="1"]
+[ext_resource type="Script" uid="uid://bp1scmybg20hj" path="res://game/peron/Peron.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://du45m3pa52xc6" path="res://assets/peron/leftArm.png" id="2"]
 [ext_resource type="AudioStream" uid="uid://bqu267yqcldvn" path="res://assets/sfx/mecha_peron_hit_1.mp3" id="2_ornvx"]
 [ext_resource type="Texture2D" uid="uid://blmhj48ipcqb8" path="res://assets/peron/torso.png" id="3"]
@@ -349,13 +349,13 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hbke6"]
 _data = {
-"attack_left_arm": SubResource("1"),
-"attack_right_arm": SubResource("2"),
-"damage": SubResource("3"),
-"idle": SubResource("4"),
-"laser": SubResource("5"),
-"laser_off": SubResource("6"),
-"walk": SubResource("7")
+&"attack_left_arm": SubResource("1"),
+&"attack_right_arm": SubResource("2"),
+&"damage": SubResource("3"),
+&"idle": SubResource("4"),
+&"laser": SubResource("5"),
+&"laser_off": SubResource("6"),
+&"walk": SubResource("7")
 }
 
 [sub_resource type="RectangleShape2D" id="8"]

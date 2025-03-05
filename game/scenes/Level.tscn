@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://ca4febxsgjyyh"]
 
-[ext_resource type="Script" path="res://game/scenes/Level.gd" id="1"]
+[ext_resource type="Script" uid="uid://bpfxknir6hw6h" path="res://game/scenes/Level.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://c0d1h3xba2j4e" path="res://assets/cityscape.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://dsaiijkscvrfw" path="res://assets/buildings.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://ck7uiqcyaf6j2" path="res://game/peron/Peron.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://buyc70hdc4bal" path="res://game/vfx/smoke_emitter/SmokeEmitter.tscn" id="4_hb282"]
-[ext_resource type="Script" path="res://game/AIDirector.gd" id="7"]
+[ext_resource type="Script" uid="uid://dqtvglfpcou34" path="res://game/AIDirector.gd" id="7"]
 [ext_resource type="PackedScene" uid="uid://c57bmno58duvi" path="res://game/Foreground.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://bugffpvydnq64" path="res://game/HUD.tscn" id="8_w6202"]
 [ext_resource type="PackedScene" uid="uid://d0u268u2tja7g" path="res://game/scenes/SceneFader.tscn" id="10_ir7ax"]
