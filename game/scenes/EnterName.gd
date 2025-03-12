@@ -27,12 +27,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if !_keyboard_ready:
 		return
-	
+
 	for i in range(initials.size()):
 		initials[i].modulate = Color.YELLOW if i == _current_initial else Color.WHITE
 	for i in range(keyboard_container.get_child_count()):
 		keyboard_container.get_children()[i].modulate = Color.YELLOW if i == _selected_character else Color.WHITE
-	
+
 	if Input.is_action_just_pressed("cursor_right"):
 		_selected_character += 1
 	if Input.is_action_just_pressed("cursor_left"):
@@ -45,9 +45,9 @@ func _process(_delta: float) -> void:
 		next_initial()
 	if Input.is_action_just_pressed("ui_cancel"):
 		prev_initial()
-	
+
 	_selected_character = clampi(_selected_character, 0, ALPHABET.length() - 1)
-	
+
 	initials[_current_initial].text = ALPHABET[_selected_character]
 
 func jump_line(direction: int) -> void:
@@ -57,20 +57,20 @@ func jump_line(direction: int) -> void:
 		accum_chars += chars
 		if _selected_character > accum_chars - 1:
 			current_line += 1
-	
+
 	# Early return invalid cases
 	if current_line == 0 && direction < 0:
 		return
 	if current_line == _chars_per_line.size() - 1 && direction > 0:
 		return
-	
+
 	accum_chars = 0
 	for i in range(current_line):
 		accum_chars += _chars_per_line[i]
-		
+
 	# accum_chars now holds the value of amount of chars until the start of the
 	# current line
-	
+
 	# Compute the position in the line of the selected character to get the
 	# ratio in the line [0, 1]
 	var position_in_line := _selected_character - accum_chars
@@ -78,7 +78,7 @@ func jump_line(direction: int) -> void:
 	# And then use the ratio to calculate the position in the next line
 	var next_line := current_line + direction
 	var new_position := roundi(current_ratio * (_chars_per_line[next_line] - 1))
-	
+
 	if direction > 0:
 		_selected_character = accum_chars + _chars_per_line[current_line] + new_position
 	else:
@@ -87,7 +87,7 @@ func jump_line(direction: int) -> void:
 func populate_keyboard() -> void:
 	var current_lines := 1
 	var current_line_chars := 0
-	
+
 	for character in ALPHABET:
 		var label := Label.new()
 		label.text = character
@@ -100,10 +100,10 @@ func populate_keyboard() -> void:
 			_chars_per_line.push_back(current_line_chars - 1)
 			current_line_chars = 1
 			current_lines += 1
-	
+
 	_chars_per_line.push_back(current_line_chars)
 	_keyboard_ready = true
-	
+
 func next_initial() -> void:
 	if _current_initial == initials.size() - 1:
 		$SceneFader.transition_to()
@@ -112,7 +112,7 @@ func next_initial() -> void:
 			.reduce(func(accum: String, text: String): return accum + text, "")
 		ScoreTracker.store_score(initials_text)
 		return
-		
+
 	_current_initial += 1
 
 func prev_initial() -> void:

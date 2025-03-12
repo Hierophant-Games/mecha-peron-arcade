@@ -29,7 +29,7 @@ func _on_sound_slider_value_changed(value: float):
 	GameSettings.sound_volume = value
 	if should_play_samples:
 		sound_sample.play()
-	
+
 func _on_voice_slider_value_changed(value: float):
 	GameSettings.voice_volume = value
 	if should_play_samples:

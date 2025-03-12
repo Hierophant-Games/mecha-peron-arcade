@@ -39,7 +39,7 @@ func _process(_delta: float):
 	var distance := peron.position.x
 	ScoreTracker.set_distance(distance)
 	input()
-	
+
 	if !game_over.visible and peron.dying:
 		game_over.show()
 
@@ -80,7 +80,7 @@ func input():
 
 	if peron.is_attacking():
 		return
-	
+
 	if Input.is_action_just_pressed("attack_fist"):
 		peron.attack_fist()
 		return

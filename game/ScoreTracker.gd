@@ -68,13 +68,13 @@ class ScoreEntry:
 
 func store_score(initials: String) -> void:
 	_current_initials = initials
-	
+
 	var file := FileAccess.open(SCORES_FILENAME, FileAccess.READ_WRITE)
 	if !file:
 		file = FileAccess.open(SCORES_FILENAME, FileAccess.WRITE)
 	file.seek_end()
 	var entry := get_current_score()
-	file.store_string(entry.initials)
+	file.store_pascal_string(entry.initials)
 	file.store_32(entry.score)
 
 func get_scores() -> Array[ScoreEntry]:
@@ -82,7 +82,7 @@ func get_scores() -> Array[ScoreEntry]:
 	var scores: Array[ScoreEntry] = []
 	while file && file.get_position() < file.get_length():
 		scores.push_back(ScoreEntry.new(
-			file.get_buffer(3).get_string_from_utf8(),
+			file.get_pascal_string(),
 			file.get_32()))
 	scores.sort_custom(func (a, b): return a.score > b.score)
 	return scores

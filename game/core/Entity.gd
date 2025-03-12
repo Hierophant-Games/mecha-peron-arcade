@@ -1,7 +1,7 @@
 class_name Entity
 extends Node2D
 ## Base class for most entities of the game
-## 
+##
 ## Supports a destroyed flag and the capability to register components
 
 var destroyed: bool = false

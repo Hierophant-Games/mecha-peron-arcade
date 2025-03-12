@@ -26,13 +26,13 @@ func set_music_volume(value: float):
 	var music_bus_index = AudioServer.get_bus_index("Music")
 	AudioServer.set_bus_volume_db(music_bus_index, linear_to_db(value))
 	save_config()
-	
+
 func set_sound_volume(value: float):
 	sound_volume = value
 	var sfx_bus_index = AudioServer.get_bus_index("Sfx")
 	AudioServer.set_bus_volume_db(sfx_bus_index, linear_to_db(value))
 	save_config()
-	
+
 func set_voice_volume(value: float):
 	voice_volume = value
 	var voice_bus_index = AudioServer.get_bus_index("Voice")
@@ -41,7 +41,7 @@ func set_voice_volume(value: float):
 
 func set_cursor_rotation(value: int):
 	cursor_rotation = value
-	
+
 	InputMap.load_from_project_settings() # clear any previous rotation
 	var cursor_up_events := InputMap.action_get_events("cursor_up")
 	var cursor_right_events := InputMap.action_get_events("cursor_right")
@@ -51,7 +51,7 @@ func set_cursor_rotation(value: int):
 	var ui_right_events := InputMap.action_get_events("ui_right")
 	var ui_down_events := InputMap.action_get_events("ui_down")
 	var ui_left_events := InputMap.action_get_events("ui_left")
-	
+
 	match value:
 		0:
 			pass
@@ -82,7 +82,7 @@ func set_cursor_rotation(value: int):
 			replace_events("ui_right", ui_up_events)
 			replace_events("ui_down", ui_right_events)
 			replace_events("ui_left", ui_down_events)
-	
+
 	save_config()
 
 func replace_events(action: StringName, events: Array[InputEvent]) -> void:

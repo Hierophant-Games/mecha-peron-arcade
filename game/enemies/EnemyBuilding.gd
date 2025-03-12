@@ -14,7 +14,7 @@ func _enter_tree() -> void:
 
 func populate() -> void:
 	var soldier_count := randi() % MAX_ADDITIONAL_SOLDIERS + MIN_SOLDIERS
-	
+
 	for node in get_random_spawn_points(soldier_count):
 		var soldier := SoldierScene.instantiate() as Soldier
 		node.add_child(soldier)

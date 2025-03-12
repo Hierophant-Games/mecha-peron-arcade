@@ -20,7 +20,7 @@ func _ready() -> void:
 	timer.one_shot = true;
 	timer.timeout.connect(on_timeout)
 	add_child(timer)
-	
+
 	# Listen to the tree changing to know where to start the timer for the demo
 	get_tree().tree_changed.connect(on_tree_changed)
 

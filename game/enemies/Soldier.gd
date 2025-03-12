@@ -21,7 +21,7 @@ func _ready():
 func _process(delta: float):
 	if destroyed:
 		return
-	
+
 	if $Sprite2D.is_visible_in_tree():
 		aim(delta)
 
@@ -30,12 +30,12 @@ func aim(delta: float):
 	if shoot_timer >= Constants.SOLDIER_SHOOT_TIME:
 		shoot_timer -= Constants.SOLDIER_SHOOT_TIME
 		$AnimationPlayer.play("aim")
-	
+
 func shoot():
 	$AnimationPlayer.play("shoot")
 	sfx_voice.set_stream(shoot_sounds.pick_random())
 	sfx_voice.play()
-	
+
 func reload():
 	$AnimationPlayer.play("reload")
 	sfx_voice.set_stream(reload_sounds.pick_random())
