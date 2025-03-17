@@ -24,7 +24,10 @@ func _ready() -> void:
 	# Listen to the tree changing to know where to start the timer for the demo
 	get_tree().tree_changed.connect(on_tree_changed)
 
-func _input(_event: InputEvent) -> void:
+func _process(_delta: float) -> void:
+	if !Input.is_anything_pressed():
+		return
+
 	# If input received while in demo, stop demo
 	if current_demo_scene >= 0:
 		stop_demo()
