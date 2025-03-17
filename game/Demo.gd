@@ -1,16 +1,20 @@
 extends Node
 
 const MAIN_MENU_FILEPATH := "res://game/scenes/MainMenu.tscn"
-const MAIN_MENU_IDLE_TIME := 20.0
+const MAIN_MENU_IDLE_TIME := 2.0
 
 const DEMO_SCENES := [
 	"res://game/scenes/Credits.tscn",
 	"res://game/scenes/HighScores.tscn",
+	"res://game/scenes/Help.tscn",
+	"res://game/scenes/Logo.tscn",
 ]
 
 const DEMO_SCENE_TIMES := [
 	28.0,
-	10.0
+	10.0,
+	15.0,
+	2.0,
 ]
 
 var timer := Timer.new()
