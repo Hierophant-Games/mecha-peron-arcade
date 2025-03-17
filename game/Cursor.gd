@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 	#	return
 
 	var direction := Input.get_vector("cursor_left", "cursor_right", "cursor_up", "cursor_down")
-	var cursor_movement := direction * delta * Constants.CURSOR_SPEED
-	var viewport := get_viewport()
-	viewport.warp_mouse(viewport.get_mouse_position() + cursor_movement)
+	if direction.length_squared() > 0:
+		var cursor_movement := direction * delta * Constants.CURSOR_SPEED
+		var viewport := get_viewport()
+		viewport.warp_mouse(viewport.get_mouse_position() + cursor_movement)
