@@ -1,7 +1,7 @@
 extends Node
 
 const MAIN_MENU_FILEPATH := "res://game/scenes/MainMenu.tscn"
-const MAIN_MENU_IDLE_TIME := 2.0
+const MAIN_MENU_IDLE_TIME := 20.0
 
 const DEMO_SCENES := [
 	"res://game/scenes/Credits.tscn",
