@@ -21,7 +21,7 @@ func _process(delta: float):
 	# scroll_vertical property is an int and we lose the decimal part
 	scroll += delta * TEXT_SPEED
 	scroll_container.scroll_vertical = roundi(scroll)
-	
+
 	# start again when reached the end
 	if scroll_container.scroll_vertical + scroll_container.size.y >= credits_text.size.y:
 		scroll = 0.0

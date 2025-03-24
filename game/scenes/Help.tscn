@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://1uulnljykc6d" path="res://game/scenes/ButtonList.gd" id="4_xtxjr"]
 [ext_resource type="PackedScene" uid="uid://d0u268u2tja7g" path="res://game/scenes/SceneFader.tscn" id="5_arbmf"]
 
-[node name="Control" type="Control"]
+[node name="Help" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

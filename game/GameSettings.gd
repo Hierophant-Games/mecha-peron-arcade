@@ -5,21 +5,31 @@ extends Node
 @export var sound_volume := 0.9: set = set_sound_volume
 @export var voice_volume := 0.9: set = set_voice_volume
 @export var cursor_rotation := 0: set = set_cursor_rotation
+@export var h_stretch := 0: set = set_h_stretch
+@export var v_stretch := 0: set = set_v_stretch
 
 const FILENAME := "user://settings.cfg"
 
 var loading_config := false
 
 func _ready():
-	load_config()
+	load_config.call_deferred()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit_game"):
 		get_tree().quit()
 	elif Input.is_action_just_pressed("open_settings"):
-		get_tree().change_scene_to_file("res://game/scenes/Options.tscn")
-	elif Input.is_action_just_pressed("on_cursor_rotation_pressed"):
+		(get_tree().current_scene as MainViewport).change_scene("res://game/scenes/Options.tscn")
+	elif Input.is_action_just_pressed("cursor_rotation"):
 		cursor_rotation = (cursor_rotation + 1) % 4
+	elif Input.is_action_just_pressed("h_stretch_down"):
+		h_stretch = h_stretch - 1
+	elif Input.is_action_just_pressed("h_stretch_up"):
+		h_stretch = h_stretch + 1
+	elif Input.is_action_just_pressed("v_stretch_down"):
+		v_stretch = v_stretch - 1
+	elif Input.is_action_just_pressed("v_stretch_up"):
+		v_stretch = v_stretch + 1
 
 func set_music_volume(value: float):
 	music_volume = value
@@ -85,6 +95,19 @@ func set_cursor_rotation(value: int):
 
 	save_config()
 
+func set_h_stretch(value: int) -> void:
+	h_stretch = value
+	set_screen_stretch()
+	save_config()
+
+func set_v_stretch(value: int) -> void:
+	v_stretch = value
+	set_screen_stretch()
+	save_config()
+
+func set_screen_stretch() -> void:
+	(get_tree().current_scene as MainViewport).stretch(h_stretch, v_stretch)
+
 func replace_events(action: StringName, events: Array[InputEvent]) -> void:
 	InputMap.action_erase_events(action)
 	for event in events:
@@ -99,6 +122,8 @@ func load_config():
 	sound_volume = config.get_value("audio", "sound_volume", sound_volume)
 	sound_volume = config.get_value("audio", "voice_volume", voice_volume)
 	cursor_rotation = config.get_value("input", "cursor_rotation", cursor_rotation)
+	h_stretch = config.get_value("screen", "h_stretch", h_stretch)
+	v_stretch = config.get_value("screen", "v_stretch", v_stretch)
 	loading_config = false
 
 func save_config():
@@ -110,4 +135,6 @@ func save_config():
 	config.set_value("audio", "sound_volume", sound_volume)
 	config.set_value("audio", "voice_volume", voice_volume)
 	config.set_value("input", "cursor_rotation", cursor_rotation)
+	config.set_value("screen", "h_stretch", h_stretch)
+	config.set_value("screen", "v_stretch", v_stretch)
 	config.save(FILENAME)

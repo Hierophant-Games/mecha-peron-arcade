@@ -9,7 +9,7 @@ const RocketScene := preload("res://game/enemies/Rocket.tscn")
 
 @onready var width: int = $Sprite2D.texture.get_width() / $Sprite2D.hframes
 @onready var health_bar := $HealthBar as HealthBar
-@onready var main_layer := get_tree().current_scene.main_layer as Node
+@onready var main_layer := (get_tree().current_scene as MainViewport).get_current_scene().main_layer as Node
 @onready var sfx_voice := $Voice as AudioStreamPlayer
 
 var shoot_timer := 0.0

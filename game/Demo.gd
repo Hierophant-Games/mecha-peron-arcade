@@ -43,7 +43,7 @@ func _process(_delta: float) -> void:
 func on_timeout() -> void:
 	if current_demo_scene + 1 < DEMO_SCENES.size():
 		current_demo_scene += 1
-		get_tree().change_scene_to_file(DEMO_SCENES[current_demo_scene])
+		(get_tree().current_scene as MainViewport).change_scene(DEMO_SCENES[current_demo_scene])
 		timer.start(DEMO_SCENE_TIMES[current_demo_scene])
 	else:
 		stop_demo()
@@ -51,7 +51,7 @@ func on_timeout() -> void:
 func on_tree_changed() -> void:
 	if current_demo_scene >= 0:
 		return
-	if get_tree() && get_tree().current_scene && get_tree().current_scene.scene_file_path == MAIN_MENU_FILEPATH:
+	if get_tree() && get_tree().current_scene && (get_tree().current_scene as MainViewport).get_current_scene().scene_file_path == MAIN_MENU_FILEPATH:
 		if timer.is_stopped():
 			timer.start(MAIN_MENU_IDLE_TIME)
 	elif !timer.is_stopped():
@@ -59,4 +59,4 @@ func on_tree_changed() -> void:
 
 func stop_demo() -> void:
 	current_demo_scene = -1
-	get_tree().change_scene_to_file(MAIN_MENU_FILEPATH)
+	(get_tree().current_scene as MainViewport).change_scene(MAIN_MENU_FILEPATH)

@@ -3,8 +3,8 @@ extends Entity
 
 const BombScene = preload("res://game/enemies/Bomb.tscn")
 
-@onready var main_layer := get_tree().current_scene.main_layer as Node
-@onready var target := get_tree().current_scene.peron as Area2D
+@onready var main_layer := (get_tree().current_scene as MainViewport).get_current_scene().main_layer as Node
+@onready var target := (get_tree().current_scene as MainViewport).get_current_scene().peron as Area2D
 @onready var width: int = $plane.texture.get_width() / $plane.hframes
 @onready var health_bar := $HealthBar as HealthBar
 @onready var bomb_origin := $BombOrigin
@@ -25,12 +25,12 @@ var vel_y := 0.0
 
 func _process(delta: float):
 	position.x += Constants.PLANE_SPEED * delta
-	
+
 	if !destroyed:
 		# sinewave fly pattern
 		sin_accum = fmod(sin_accum + SIN_FACTOR, TAU)
 		position.y = initial_y - SIN_HEIGHT * sin(sin_accum)
-		
+
 		if !bomb_dropped:
 			try_drop_bomb()
 	else:
