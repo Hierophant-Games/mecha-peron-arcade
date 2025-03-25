@@ -39,15 +39,29 @@ ROCKET_PUNCH_TUTORIAL_TEXT,Use the Rocket Punch,Usá el Puño Cohete
 HAMMER_FIST_TUTORIAL_TEXT,Use the Justicialist Arm!,Usá el Brazo Justicialista!
 WARNING_TEXT,WARNING! ->,CUIDADO! ->
 OVERHEAT_TEXT,OVERHEAT,SOBRECARGA
-CREDITS_TEXT,"GODOT PORT BY
+CREDITS_TEXT,"ARCADE VERSION BY
 
 Santiago Martín Vilar
 
 Nicolás Viegas Palermo
 
 
-Additional support
+
+Godot support
+
 Lisandro ""NoidEXE"" Lorea
+
+
+Hardware support
+
+Nahuel Moco
+
+
+Special Thanks
+
+Emmanuel Firmapaz
+Seba Saga
+Hernán Sáez
 
 
 
@@ -86,16 +100,29 @@ WE <3 JAPAN, we're not making any joke with the latest events.*
 
 This game was made for the ADVA's CODEAR ""Perón""compo. ADVA is the Argentine Association of Videogame Developers. Thanks for playing!
 
-It was our first completed project as a team and we're very happy with the outcome. Viva Perón!","PORT A GODOT POR
+It was our first completed project as a team and we're very happy with the outcome. Viva Perón!","ARCADE DESARROLLADO EN GODOT ENGINE POR
 
 Santiago Martin Vilar
 
 Nicolás Viegas Palermo
 
 
-Soporte Adicional
+
+Soporte Godot
+
 Lisandro ""NoidEXE"" Lorea
 
+
+Soporte Hardware
+
+Nahuel Moco
+
+
+Agradecimientos Adicionales
+
+Emmanuel Firmapaz
+Seba Saga
+Hernán Sáez
 
 
 

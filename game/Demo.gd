@@ -11,7 +11,7 @@ const DEMO_SCENES := [
 ]
 
 const DEMO_SCENE_TIMES := [
-	28.0,
+	30.0,
 	10.0,
 	15.0,
 	2.0,
