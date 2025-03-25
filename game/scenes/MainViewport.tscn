@@ -19,10 +19,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -33,7 +29,7 @@ disable_3d = true
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 snap_2d_vertices_to_pixel = true
-size = Vector2i(280, 200)
+size = Vector2i(320, 240)
 size_2d_override = Vector2i(320, 240)
 size_2d_override_stretch = true
 render_target_update_mode = 4
