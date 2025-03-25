@@ -29,6 +29,8 @@ SOUND_VOLUME_TEXT,Sound volume,Volumen del sonido
 VOICE_VOLUME_TEXT,Voices volume,Volumen de voces
 LANGUAGE_TEXT,Language,Idioma
 CURSOR_ROTATION_TEXT,Cursor Rotation,Rotación del cursor
+H_STRETCH_TEXT,Horizontal Stretch,Horizontal Stretch
+V_STRETCH_TEXT,Vertical Stretch,Vertical Stretch
 START_GAME_BUTTON_TEXT,Viva Mecha-Perón!,Viva Mecha-Perón!
 OPTIONS_BUTTON_TEXT,Configure,Configurar
 CREDITS_BUTTON_TEXT,Credits,Créditos

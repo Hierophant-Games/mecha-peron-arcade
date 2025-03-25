@@ -5,7 +5,7 @@ const CannonBombScene := preload("res://game/enemies/CannonBomb.tscn")
 
 var attack_timer := 0.0
 
-@onready var main_layer := get_tree().current_scene.main_layer as Node
+@onready var main_layer := (get_tree().current_scene as MainViewport).get_current_scene().main_layer as Node
 
 func _ready():
 	$CannonSprite.show()
@@ -17,14 +17,14 @@ func _process(_delta):
 
 	# decide whether shooting or idling
 	attack_timer += _delta
-	
+
 	var ready_to_shoot := attack_timer >= Constants.CANNON_ATTACK_DELAY
 	var prefix := "shoot" if ready_to_shoot else "idle"
-	
+
 	# get required context
 	var viewport_x_pos := get_global_transform_with_canvas().origin.x
 	var viewport_rect_end_x := get_viewport_rect().end.x
-	
+
 	# decide angle and play
 	if viewport_x_pos > (viewport_rect_end_x * 0.66):
 		$AnimationPlayer.play(prefix + "_left")

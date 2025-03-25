@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://1uulnljykc6d" path="res://game/scenes/ButtonList.gd" id="4_mwlkc"]
 [ext_resource type="AudioStream" uid="uid://btd05oe5xsa4o" path="res://assets/sfx/explosion_big.mp3" id="6_fcwdf"]
 
-[node name="Control" type="Control"]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

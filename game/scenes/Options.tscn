@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjvkfrogc566e"]
+[gd_scene load_steps=10 format=3 uid="uid://bjvkfrogc566e"]
 
 [ext_resource type="Theme" uid="uid://ct3h1jpn888ka" path="res://assets/default_theme.tres" id="1_cdxlw"]
 [ext_resource type="Script" uid="uid://b4r5tem0fs2ck" path="res://game/scenes/Options.gd" id="2_jk7h8"]
@@ -10,9 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cfcrk6byeh6h3" path="res://assets/sfx/console_blip.mp3" id="6_1dvkk"]
 [ext_resource type="AudioStream" uid="uid://pryshwo2d0x6" path="res://assets/sfx/mecha_peron_companieros.mp3" id="7_hs4md"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f0wmo"]
-
-[node name="Control" type="Control"]
+[node name="Options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -140,9 +138,36 @@ layout_mode = 2
 max_value = 1.0
 step = 0.01
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_f0wmo")
+
+[node name="HorizontalStretch" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/HorizontalStretch"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "H_STRETCH_TEXT"
+
+[node name="Slider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer2/HorizontalStretch"]
+layout_mode = 2
+min_value = -32.0
+max_value = 0.0
+
+[node name="VerticalStretch" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VerticalStretch"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "V_STRETCH_TEXT"
+
+[node name="Slider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer2/VerticalStretch"]
+layout_mode = 2
+min_value = -32.0
+max_value = 0.0
 
 [node name="Version" type="Label" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(240, 0)
@@ -186,4 +211,6 @@ bus = &"Voice"
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/MusicSettings/Slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/SoundSettings/Slider" to="." method="_on_sound_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/VoiceSettings/Slider" to="." method="_on_voice_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/HorizontalStretch/Slider" to="." method="_on_h_stretch_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/VerticalStretch/Slider" to="." method="_on_v_stretch_slider_value_changed"]
 [connection signal="pressed" from="MarginContainer/ButtonList/BackButton" to="." method="_on_back_button_pressed"]

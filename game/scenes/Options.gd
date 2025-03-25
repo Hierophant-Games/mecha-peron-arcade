@@ -5,6 +5,8 @@ extends Control
 @onready var music_slider := $MarginContainer/VBoxContainer/MusicSettings/Slider as HSlider
 @onready var sound_slider := $MarginContainer/VBoxContainer/SoundSettings/Slider as HSlider
 @onready var voice_slider := $MarginContainer/VBoxContainer/VoiceSettings/Slider as HSlider
+@onready var h_stretch_slider := $MarginContainer/VBoxContainer/HBoxContainer2/HorizontalStretch/Slider as HSlider
+@onready var v_stretch_slider := $MarginContainer/VBoxContainer/HBoxContainer2/VerticalStretch/Slider as HSlider
 @onready var sound_sample := $SoundSample as AudioStreamPlayer
 @onready var voice_sample := $VoiceSample as AudioStreamPlayer
 
@@ -17,6 +19,8 @@ func _ready():
 	music_slider.value = GameSettings.music_volume
 	sound_slider.value = GameSettings.sound_volume
 	voice_slider.value = GameSettings.voice_volume
+	h_stretch_slider.value = GameSettings.h_stretch
+	v_stretch_slider.value = GameSettings.v_stretch
 	should_play_samples = true
 
 func _on_back_button_pressed():
@@ -43,3 +47,9 @@ func _on_english_pressed() -> void:
 
 func _on_cursor_rotation_pressed(value: int) -> void:
 	GameSettings.cursor_rotation = value
+
+func _on_h_stretch_slider_value_changed(value: float):
+	GameSettings.h_stretch = int(value)
+
+func _on_v_stretch_slider_value_changed(value: float):
+	GameSettings.v_stretch = int(value)
