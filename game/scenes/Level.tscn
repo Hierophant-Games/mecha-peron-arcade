@@ -17,6 +17,13 @@ enter_your_name_scene = "res://game/scenes/EnterName.tscn"
 
 [node name="ParallaxBackground" type="Node2D" parent="."]
 
+[node name="StaticLayer" type="Parallax2D" parent="ParallaxBackground"]
+scroll_scale = Vector2(0, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="ParallaxBackground/StaticLayer"]
+color = Color(0.827451, 0.662745, 0.662745, 1)
+polygon = PackedVector2Array(0, 0, 320, 0, 320, 240, 0, 240)
+
 [node name="BackLayer" type="Parallax2D" parent="ParallaxBackground"]
 scroll_scale = Vector2(0.2, 1)
 repeat_size = Vector2(480, 0)
